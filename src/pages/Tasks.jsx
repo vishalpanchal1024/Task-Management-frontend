@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Tasks = () => {
+const TasksPage = () => {
   return (
     <div>Tasks</div>
   )
 }
 
-export default Tasks
+export default TasksPage
