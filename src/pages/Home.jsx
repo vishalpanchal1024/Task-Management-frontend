@@ -8,9 +8,9 @@ import { BiLoaderAlt } from 'react-icons/bi';
 
 
 function HomePage() {
-  const [columns, setColumns] = useState<Column[]>([]);
+  const [columns, setColumns] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchTasks();
@@ -18,7 +18,7 @@ function HomePage() {
 
   const fetchTasks = async () => {
     try {
-      const response = await new Promise<Task[]>((resolve) => {
+      const response = await new Promise((resolve) => {
         setTimeout(() => {
           resolve([
             { id: '1', title: 'Create login page', status: 'todo' },
@@ -31,7 +31,7 @@ function HomePage() {
         }, 1000);
       });
 
-      const columnData: Column[] = [
+      const columnData = [
         { 
           id: 'todo', 
           title: 'To Do', 
@@ -77,7 +77,7 @@ function HomePage() {
     }
   };
 
-  const onDragEnd = async (result: any) => {
+  const onDragEnd = async (result) => {
     const { destination, source, draggableId } = result;
 
     if (!destination) return;
